@@ -7,4 +7,4 @@ RUN pip3 install --no-cache-dir -r requirements.txt
 COPY . /var/app/flask_app/
 ENV FLASK_APP ../app.py
 
-CMD exec gunivorn -w 1 -b :8000 app:app --reload
+CMD exec gunicorn -w 1 -b :8000 app:app --reload

@@ -1,4 +1,4 @@
-FLask==1.1.2
+FLask==2.1.0
 Flask-Migrate==2.5.3
 Flask-Script==2.0.6
 mysql-connector-python==8.0.5
