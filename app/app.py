@@ -18,7 +18,7 @@ def hateoas(id):
     return [
         {
             "rel": "self",
-            "resource": "http://127.0.0.1/8000/v1/users" + str(id),
+            "resource": "http://127.0.0.1:8000/v1/users" + str(id),
             "method": "GET"
         },
         {
@@ -38,7 +38,7 @@ def post_user_details():
     try:
         data = request.get_json()
         sql = text('INSERT INTO users (name, surname, identity_number) values (:name, :surname, :id_num)')
-        result = db.engine.execute(
+        result = db.session.execute(
             sql,
             name=data['name'],
             surname=data['surname'],
